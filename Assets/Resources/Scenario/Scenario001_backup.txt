@@ -1,0 +1,133 @@
+fg
+
+// 로딩
+showloading
+wait 0.1
+loadbg Restaurant
+loadbg Town
+loadbgm Cool
+loadmodel Haru
+loadmodel Epsilon
+wait 0.1
+removeloading
+showmenu
+
+text Log No.1\n- 중앙처리장치와 주기억장치
+
+bg Restaurant
+fgout 1.0
+bgm Ice_Cream
+wait 0.5
+
+model Epsilon idle true empty (0,-1,0) 1.0
+
+name
+text 소개팅 도중 찾아온 적막.
+text 어색한 분위기를 잘 넘겨야 하는데...
+
+label selectStart
+expression Epsilon empty
+motion Epsilon idle true
+name
+text 무슨 이야기를 할까?
+
+select
+selectitem oil 시사
+selectitem gundam 건담
+selectitem unittest 유닛 테스트
+selectend
+
+label oil
+name 나
+text 얼마 전에 TV에서 봤는데 국제 유가가 계속 떨어지고 있다더라구요.
+text 국제 유가는 계속 떨어진다는데 왜 주유소 기름값은 그만큼 안 줄어드는지 모르겠어요. 하핫.
+
+expression Epsilon smile
+name 나래
+text 기름에 붙는 세금 자체가 줄어들지 않으니까 그럴 거에요. 유류세는 유가와 무관하게 리터당 일정액이 매겨지는 종량세니까요.
+expression Epsilon empty
+text 국제 유가 자체도 간단히 생각할 수 없는 문제인 게, 세계 산유량뿐만 아니라 달러 강세 같은 영향도 고려해야 해요. 미국 연방준비제도가 기준금리라도 인상하면...
+
+name
+text 그렇게 10분간 세계 경제 정세에 대한 강의가 계속됐다...
+jump selectStart
+
+label gundam
+name 나
+text 혹시 건담 좋아하세요? 저는 비우주세기 건담도 나쁘지 않더라구요.
+
+expression Epsilon sad
+motion Epsilon tilt
+name 나래
+text 비우주... 뭐라구요? 죄송해요. 제가 잘 모르는 이야기인 거 같네요.
+
+name
+text 이런! 역시 이런 주제는 소개팅에서는 무리였나...
+jump selectStart
+
+label unittest
+
+name 나
+text 나래 씨, 프로그램 개발에 있어서 유닛 테스트에 대해서 어떻게 생각하세요?
+
+expression Epsilon surprise
+name 나래
+text 유닛 테스트요?
+expression Epsilon
+text 테스트 케이스 작성에 들어가는 노력 때문에 비효율적으로 보는 분도 있지만 저는 그렇게 생각하지 않아요.
+text 프로젝트 전체로 봤을 때는 디버깅이나 코드 재검증에 들어가는 비용이 확실히 줄어들거든요.
+
+name 나
+text 맞아요. 테스트 케이스 때문에 코드를 쪼개면서 구조에 대해 한번 더 생각해 볼 수도 있구요.
+
+motion Epsilon happy
+expression Epsilon smile
+name 나래
+text 그것도 공감, 공감!
+
+name 나
+text 구조 이야기가 나온 김에, 그러면 private 멤버의 테스트는 어떻게 하고 계세요?
+
+motion Epsilon easy
+expression Epsilon
+name 나래
+text 음... 리플렉션을 이용해서 테스트 해야 한다는 의견도 있는데 전 그건 반대에요. 유지보수 측면에서 보자면...
+
+fg 1.0
+wait 1.0
+
+name
+text 그렇게 나는 유닛 테스트로 여자친구를 사귈 수 있었다.
+text 여러분 유닛 테스트가 이렇게 좋은 겁니다.
+text 유닛 테스트하세요. 두 번 하세요.
+
+hidetext
+bg Town
+model Epsilon idle true empty (-0.8,-1,0) 0.0
+model Haru idle true empty (0.8,-1,0) 0.0
+wait 1.0
+fgsweep right 1.0
+wait 0.5
+
+motion Haru consider
+name 박하
+text ...라는 꿈을 꿨어요.
+
+motion Epsilon what
+name 나래
+text 으응? 대체 어떻게 해야 저런 꿈에서 저런 결론이 나오는 거야?!
+text 그리고 왜 거기서 소개팅 상대로 내가 나오는데?!
+
+motion Haru foldSmile
+name 박하
+text 역시 코딩은 여자의 매력을 배로 증가시켜주는군요.\n나래 양 최고!(엄지 척!)
+
+motion Epsilon lookAway
+name 나래
+text 으으, 꿈은 박하가 꾸고 왜 부끄러움은 내 몫인 거야...
+
+hidetext
+wait 0.5
+fg 1.0
+wait 0.5
+title
